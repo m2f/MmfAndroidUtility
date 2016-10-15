@@ -9,9 +9,7 @@ import android.text.ParcelableSpan;
 import android.text.Spanned;
 import android.text.style.LeadingMarginSpan;
 
-public class StarSpan implements LeadingMarginSpan, ParcelableSpan {
-
-    private static final int STAR_SPAN = 999;
+public class StarSpan implements LeadingMarginSpan {
 
     private final int mGapWidth;
     private final boolean mWantColor;
@@ -54,34 +52,8 @@ public class StarSpan implements LeadingMarginSpan, ParcelableSpan {
         mInnerRadius = innerRadius;
     }
 
-    public StarSpan(Parcel src) {
-        mGapWidth = src.readInt();
-        mWantColor = src.readInt() != 0;
-        mColor = src.readInt();
-        mSpikes = src.readInt();
-        mOuterRadius = src.readInt();
-        mInnerRadius = src.readInt();
-    }
-
-    public int getSpanTypeId() {
-        return STAR_SPAN;
-    }
-
     public int describeContents() {
         return 0;
-    }
-
-    public void writeToParcel(Parcel dest, int flags) {
-        writeToParcelInternal(dest, flags);
-    }
-
-    public void writeToParcelInternal(Parcel dest, int flags) {
-        dest.writeInt(mGapWidth);
-        dest.writeInt(mWantColor ? 1 : 0);
-        dest.writeInt(mColor);
-        dest.writeInt(mSpikes);
-        dest.writeInt(mOuterRadius);
-        dest.writeInt(mInnerRadius);
     }
 
     public int getLeadingMargin(boolean first) {
@@ -111,6 +83,7 @@ public class StarSpan implements LeadingMarginSpan, ParcelableSpan {
                 c.drawPath(sStarPath, p);
                 c.restore();
             } else {
+                //TODO: See how to do when hardware acceleration is not enabled
                 //c.drawCircle(x + dir * mStarRadius, (top + bottom) / 2.0f, mStarRadius, p);
             }
 

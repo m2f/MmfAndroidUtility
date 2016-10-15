@@ -64,7 +64,10 @@ public class ExpandableBulletView extends LinearLayout implements View.OnClickLi
             expandableBulletTextView.setExpanded(true);
             expandableBulletTextView.setMaxLines(Integer.MAX_VALUE);
         }
-        setArrayContent(arrayContent);
+
+        if(arrayContent.length > 0) {
+            setArrayContent(arrayContent);
+        }
 
         readMoreButton = (Button) getChildAt(1);
         readMoreButton.setText(isCollapsed ? moreButtonText : lessButtonText);
