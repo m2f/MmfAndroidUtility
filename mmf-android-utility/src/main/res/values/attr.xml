@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="htmlContent" format="string" localization="suggested" />
+    <attr name="enableImageGetter" format="boolean"/>
+    <attr name="arrayContent" format="reference" />
+    <attr name="isCollapsed" format="boolean"/>
+    <attr name="collapsedLines" format="integer" />
+    <attr name="animationDuration" format="integer" />
+    <attr name="moreButtonText" format="string" localization="suggested" />
+    <attr name="lessButtonText" format="string" localization="suggested" />
+    <attr name="textSize" format="dimension" />
+    <attr name="textColor" format="string" />
+    <attr name="starGapWidth" format="dimension" />
+    <attr name="starRadius" format="dimension" />
+
+    <declare-styleable name="ExpandableContentView">
+        <attr name="textContent" format="string" localization="suggested" />
+        <attr name="isCollapsed" />
+        <attr name="moreButtonText" />
+        <attr name="lessButtonText" />
+        <attr name="collapsedLines" />
+        <attr name="animationDuration" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableHtmlView">
+        <attr name="htmlContent" />
+        <attr name="enableImageGetter" />
+        <attr name="isCollapsed" />
+        <attr name="moreButtonText" />
+        <attr name="lessButtonText" />
+        <attr name="collapsedLines" />
+        <attr name="animationDuration" />
+        <attr name="textSize" />
+        <attr name="textColor" />
+    </declare-styleable>
+
+    <declare-styleable name="HtmlTextView">
+        <attr name="htmlContent" />
+        <attr name="enableImageGetter" />
+        <attr name="textSize" />
+        <attr name="textColor" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableBulletView">
+        <attr name="arrayContent" />
+        <attr name="isCollapsed" />
+        <attr name="moreButtonText" />
+        <attr name="lessButtonText" />
+        <attr name="collapsedLines" />
+        <attr name="animationDuration" />
+        <attr name="textSize" />
+        <attr name="textColor" />
+    </declare-styleable>
+
+    <declare-styleable name="BulletTextView">
+        <attr name="arrayContent" />
+        <attr name="textSize" />
+        <attr name="textColor" />
+        <attr name="starGapWidth" />
+        <attr name="starRadius" />
+    </declare-styleable>
+
+</resources>

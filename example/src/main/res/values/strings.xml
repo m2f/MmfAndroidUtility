@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Utility Example</string>
+    <string name="data_binding_activity">View Data Binding Activity</string>
+    <string name="expandable_view">Expandable View</string>
+    <string name="custom_view">Custom View</string>
+    <string name="small_text_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="simple_text_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut eros sed arcu auctor tincidunt
+    id sit amet elit. Mauris in faucibus neque. Suspendisse facilisis urna nec nisi convallis tincidunt.
+    Mauris at elit et arcu viverra auctor. Nullam et arcu ultricies, iaculis dolor efficitur, tristique eros.
+    Interdum et malesuada some bold text in here fames ac ante ipsum primis in faucibus.
+    Integer nec aliquet mi.</string>
+
+    <string name="html_text_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut eros sed arcu auctor tincidunt
+    id sit amet elit. Mauris in faucibus neque. Suspendisse facilisis urna nec nisi convallis tincidunt.
+    Mauris at elit et arcu viverra auctor. Nullam et arcu ultricies, iaculis dolor efficitur, tristique eros.
+    Interdum et malesuada <b>some bold text in here</b> fames ac ante ipsum primis in faucibus.
+    Integer nec aliquet mi.
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+        <h2>Know About Me</h2>
+        <p>
+            Hello this is in a paragraph, and is long.
+        </p>
+    </string>
+
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+    </string-array>
+
+</resources>
