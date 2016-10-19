@@ -36,8 +36,16 @@ public class BulletTextView extends TextView {
         int arrayContentRes = typedArray.getResourceId(R.styleable.BulletTextView_arrayContent, -1);
         int textSize = typedArray.getDimensionPixelSize(R.styleable.BulletTextView_textSize, 0);
         String textColor = typedArray.getString(R.styleable.BulletTextView_textColor);
-        starGapWidth = typedArray.getDimensionPixelSize(R.styleable.BulletTextView_starGapWidth, StarSpan.STANDARD_GAP_WIDTH);
-        starRadius = typedArray.getDimensionPixelSize(R.styleable.BulletTextView_starRadius, StarSpan.STANDARD_OUTER_RADIUS);
+        starGapWidth = typedArray.getDimensionPixelSize(R.styleable.BulletTextView_starGapWidth, -1);
+        starRadius = typedArray.getDimensionPixelSize(R.styleable.BulletTextView_starRadius, -1);
+
+        if(-1 == starGapWidth) {
+            starGapWidth = getResources().getDimensionPixelSize(R.dimen.standard_gap_width);
+        }
+
+        if(-1 == starRadius) {
+            starRadius = getResources().getDimensionPixelSize(R.dimen.standard_outer_radius);
+        }
 
         if(textSize > 0) this.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
         if(null != textColor) this.setTextColor(Color.parseColor(textColor));

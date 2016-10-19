@@ -8,6 +8,7 @@ import android.text.Layout;
 import android.text.ParcelableSpan;
 import android.text.Spanned;
 import android.text.style.LeadingMarginSpan;
+import android.util.TypedValue;
 
 public class StarSpan implements LeadingMarginSpan {
 
@@ -23,24 +24,8 @@ public class StarSpan implements LeadingMarginSpan {
     public static final int STANDARD_OUTER_RADIUS = 8;
     public static final int STANDARD_SPIKES = 5;
 
-    public StarSpan() {
-        this(STANDARD_GAP_WIDTH, 0, STANDARD_SPIKES, STANDARD_OUTER_RADIUS, STANDARD_OUTER_RADIUS/2);
-    }
-
-    public StarSpan(int gapWidth) {
-        this(gapWidth, 0, STANDARD_SPIKES, STANDARD_OUTER_RADIUS, STANDARD_OUTER_RADIUS/2);
-    }
-
     public StarSpan(int gapWidth, int outerRadius) {
-        this(gapWidth, 0, STANDARD_SPIKES,outerRadius, outerRadius /2);
-    }
-
-    public StarSpan(int gapWidth, int color, int spikes) {
-        this(gapWidth, color, spikes, STANDARD_OUTER_RADIUS, STANDARD_OUTER_RADIUS/2);
-    }
-
-    public StarSpan(int gapWidth, int color, int spikes, int outerRadius) {
-        this(gapWidth, color, spikes, outerRadius, outerRadius /2);
+        this(gapWidth, 0, STANDARD_SPIKES, outerRadius, outerRadius /2);
     }
 
     public StarSpan(int gapWidth, int color, int spikes, int outerRadius, int innerRadius) {
