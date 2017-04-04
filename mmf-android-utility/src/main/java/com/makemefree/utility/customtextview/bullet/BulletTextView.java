@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.makemefree.utility.R;
 
+import static android.R.id.list;
+
 public class BulletTextView extends TextView {
 
     private int starRadius;
@@ -63,6 +65,8 @@ public class BulletTextView extends TextView {
     }
 
     public void setArrayContent(String[] points) {
+        if (null == points || points.length == 0) return;
+
         String pointersStr = TextUtils.join("\n", points);
         SpannableString span = new SpannableString(pointersStr);
         int spanStart = 0, len = points.length;
