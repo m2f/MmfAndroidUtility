@@ -16,19 +16,19 @@
 
 package com.makemefree.utility.sufficientlysecure.htmltextview;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Color;
+
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RawRes;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.text.Html;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
-
 import com.makemefree.utility.R;
-
 import java.io.InputStream;
 import java.util.Scanner;
 
@@ -63,15 +63,17 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
 
     private void init(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ExpandableHtmlView, 0, 0);
-        String htmlContent = typedArray.getString(R.styleable.ExpandableHtmlView_htmlContent);
-        enableHtmlGetter = typedArray.getBoolean(R.styleable.ExpandableHtmlView_enableImageGetter, false);
-        int textSize = typedArray.getDimensionPixelSize(R.styleable.ExpandableHtmlView_textSize, 0);
-        String textColor = typedArray.getString(R.styleable.ExpandableHtmlView_textColor);
+        String htmlContent = typedArray.getString(R.styleable.HtmlTextView_htmlContent);
+        enableHtmlGetter = typedArray.getBoolean(R.styleable.HtmlTextView_enableImageGetter, false);
+        int textSize = typedArray.getDimensionPixelSize(R.styleable.HtmlTextView_textSize, 0);
+        String textColor = typedArray.getString(R.styleable.HtmlTextView_textColor);
+        Float lineSpacing = typedArray.getFloat(R.styleable.HtmlTextView_lineSpacing, 0.0f);
 
         typedArray.recycle();
 
         if(textSize > 0) this.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
         if(null != textColor) this.setTextColor(Color.parseColor(textColor));
+        if(lineSpacing > 0) this.setLineSpacing(0.0f, lineSpacing);
 
         if(null != htmlContent) {
             setHtmlContent(htmlContent);

@@ -40,6 +40,7 @@ public class ExpandableHtmlView extends LinearLayout implements View.OnClickList
         int animationDuration = typedArray.getInt(R.styleable.ExpandableHtmlView_animationDuration, ExpandableHtmlTextView.DEFAULT_ANIMATION_DURATION);
         int textSize = typedArray.getDimensionPixelSize(R.styleable.ExpandableHtmlView_textSize, 0);
         String textColor = typedArray.getString(R.styleable.ExpandableHtmlView_textColor);
+        Float lineSpacing = typedArray.getFloat(R.styleable.ExpandableHtmlView_lineSpacing, 0.0f);
 
         typedArray.recycle();
 
@@ -51,6 +52,7 @@ public class ExpandableHtmlView extends LinearLayout implements View.OnClickList
         expandableHtmlTextView = (ExpandableHtmlTextView) getChildAt(0);
         if(textSize > 0) expandableHtmlTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
         if(null != textColor) expandableHtmlTextView.setTextColor(Color.parseColor(textColor));
+        if(lineSpacing > 0) expandableHtmlTextView.setLineSpacing(0.0f, lineSpacing);
 
         expandableHtmlTextView.setAnimationDuration(animationDuration);
         expandableHtmlTextView.setCollapsedLines(collapsedLines);
