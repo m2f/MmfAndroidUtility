@@ -6,7 +6,9 @@ import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.style.LineHeightSpan;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.widget.TextView;
 
@@ -40,7 +42,7 @@ public class BulletTextView extends TextView {
         String textColor = typedArray.getString(R.styleable.BulletTextView_textColor);
         starGapWidth = typedArray.getDimensionPixelSize(R.styleable.BulletTextView_starGapWidth, -1);
         starRadius = typedArray.getDimensionPixelSize(R.styleable.BulletTextView_starRadius, -1);
-
+        Float lineSpacing = typedArray.getFloat(R.styleable.BulletTextView_lineSpacing, 0.0f);
         if(-1 == starGapWidth) {
             starGapWidth = getResources().getDimensionPixelSize(R.dimen.standard_gap_width);
         }
@@ -51,6 +53,7 @@ public class BulletTextView extends TextView {
 
         if(textSize > 0) this.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
         if(null != textColor) this.setTextColor(Color.parseColor(textColor));
+        if(lineSpacing > 0) this.setLineSpacing(0.0f, lineSpacing);
 
         String[] arrayContent;
         if(arrayContentRes == -1) {

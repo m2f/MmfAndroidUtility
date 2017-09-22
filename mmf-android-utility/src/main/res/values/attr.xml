@@ -53,6 +53,7 @@
         <attr name="animationDuration" />
         <attr name="textSize" />
         <attr name="textColor" />
+        <attr name="lineSpacing" />
     </declare-styleable>
 
     <declare-styleable name="BulletTextView">
@@ -61,6 +62,7 @@
         <attr name="textColor" />
         <attr name="starGapWidth" />
         <attr name="starRadius" />
+        <attr name="lineSpacing" />
     </declare-styleable>
 
 </resources>

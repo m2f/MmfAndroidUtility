@@ -26,6 +26,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.text.Html;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import com.makemefree.utility.R;
@@ -62,13 +63,12 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
     }
 
     private void init(Context context, AttributeSet attrs) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ExpandableHtmlView, 0, 0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.HtmlTextView, 0, 0);
         String htmlContent = typedArray.getString(R.styleable.HtmlTextView_htmlContent);
         enableHtmlGetter = typedArray.getBoolean(R.styleable.HtmlTextView_enableImageGetter, false);
         int textSize = typedArray.getDimensionPixelSize(R.styleable.HtmlTextView_textSize, 0);
         String textColor = typedArray.getString(R.styleable.HtmlTextView_textColor);
         Float lineSpacing = typedArray.getFloat(R.styleable.HtmlTextView_lineSpacing, 0.0f);
-
         typedArray.recycle();
 
         if(textSize > 0) this.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
