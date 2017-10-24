@@ -12,9 +12,4 @@
         android:title="@string/expandable_view"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/expandable_layout"
-        android:title="Expandable Layout"
-        app:showAsAction="never" />
-
 </menu>

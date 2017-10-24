@@ -23,7 +23,6 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name="com.makemefree.utility.example.DataBindingExampleActivity" />
         <activity android:name="com.makemefree.utility.example.ExpandableViewActivity" />
-        <activity android:name="com.makemefree.utility.example.ListViewExpandableExample" />
     </application>
 
 </manifest>

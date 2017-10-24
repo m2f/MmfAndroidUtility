@@ -77,9 +77,6 @@ public class MainActivity extends Activity {
             case R.id.action_view_expandable:
                 startActivity(new Intent(this, ExpandableViewActivity.class));
                 return true;
-            case R.id.expandable_layout:
-                startActivity(new Intent(this, ListViewExpandableExample.class));
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
