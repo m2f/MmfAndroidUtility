@@ -36,7 +36,7 @@ public class ExpandableHtmlView extends LinearLayout implements View.OnClickList
         lessButtonText = typedArray.getString(R.styleable.ExpandableHtmlView_lessButtonText);
         isCollapsed = typedArray.getBoolean(R.styleable.ExpandableHtmlView_isCollapsed, true);
         enableHtmlGetter = typedArray.getBoolean(R.styleable.ExpandableHtmlView_enableImageGetter, false);
-        collapsedLines = typedArray.getInt(R.styleable.ExpandableHtmlView_collapsedLines, ExpandableHtmlTextView.DEFAULT_COLLAPSED_LINES);
+        int collapsedLines = typedArray.getInt(R.styleable.ExpandableHtmlView_collapsedLines, ExpandableHtmlTextView.DEFAULT_COLLAPSED_LINES);
         int animationDuration = typedArray.getInt(R.styleable.ExpandableHtmlView_animationDuration, ExpandableHtmlTextView.DEFAULT_ANIMATION_DURATION);
         int textSize = typedArray.getDimensionPixelSize(R.styleable.ExpandableHtmlView_textSize, 0);
         String textColor = typedArray.getString(R.styleable.ExpandableHtmlView_textColor);
@@ -55,14 +55,7 @@ public class ExpandableHtmlView extends LinearLayout implements View.OnClickList
         if(lineSpacing > 0) expandableHtmlTextView.setLineSpacing(0.0f, lineSpacing);
 
         expandableHtmlTextView.setAnimationDuration(animationDuration);
-        expandableHtmlTextView.setCollapsedLines(collapsedLines);
-        if(isCollapsed) {
-            expandableHtmlTextView.setExpanded(false);
-            expandableHtmlTextView.setMaxLines(collapsedLines);
-        } else {
-            expandableHtmlTextView.setExpanded(true);
-            expandableHtmlTextView.setMaxLines(Integer.MAX_VALUE);
-        }
+        setCollapsedLines(collapsedLines);
         setHtmlContent(htmlContent);
 
         readMoreButton = (Button) getChildAt(1);
@@ -74,6 +67,18 @@ public class ExpandableHtmlView extends LinearLayout implements View.OnClickList
     public void onClick(View v) {
         expandableHtmlTextView.toggle();
         readMoreButton.setText(expandableHtmlTextView.isExpanded() ? lessButtonText : moreButtonText);
+    }
+
+    public void setCollapsedLines(int collapsedLines) {
+        this.collapsedLines = collapsedLines;
+        expandableHtmlTextView.setCollapsedLines(collapsedLines);
+        if(isCollapsed) {
+            expandableHtmlTextView.setExpanded(false);
+            expandableHtmlTextView.setMaxLines(collapsedLines);
+        } else {
+            expandableHtmlTextView.setExpanded(true);
+            expandableHtmlTextView.setMaxLines(Integer.MAX_VALUE);
+        }
     }
 
     public void setHtmlContent(String htmlContent) {
