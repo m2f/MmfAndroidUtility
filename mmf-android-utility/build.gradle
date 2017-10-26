@@ -1,5 +1,10 @@
 apply plugin: 'com.android.library'
 
+project.ext.minSdk = 16
+project.ext.compileSdk = 26
+project.ext.buildTools = "26.0.2"
+project.ext.supportLibVersion = "26.0.2"
+
 android {
     compileSdkVersion compileSdk
     buildToolsVersion buildTools
@@ -19,12 +24,10 @@ android {
             minifyEnabled false
         }
         staging {
-            minifyEnabled true
-            consumerProguardFiles 'consumer-proguard-rules.pro'
+            minifyEnabled false
         }
         release {
-            minifyEnabled true
-            consumerProguardFiles 'consumer-proguard-rules.pro'
+            minifyEnabled false
         }
     }
 }
