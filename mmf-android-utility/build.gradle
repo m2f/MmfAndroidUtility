@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.1'
+    compileSdkVersion compileSdk
+    buildToolsVersion buildTools
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 26
+        minSdkVersion minSdk
+        targetSdkVersion compileSdk
         versionCode 8
         versionName '1.0'
     }
@@ -14,9 +14,22 @@ android {
     lintOptions {
         abortOnError false
     }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        staging {
+            minifyEnabled true
+            consumerProguardFiles 'consumer-proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            consumerProguardFiles 'consumer-proguard-rules.pro'
+        }
+    }
 }
 
 dependencies {
-    compile 'com.android.support:support-annotations:26.0.2'
-    compile "com.android.support:appcompat-v7:26.0.2"
+    api "com.android.support:support-annotations:${supportLibVersion}"
+    api "com.android.support:appcompat-v7:${supportLibVersion}"
 }
