@@ -130,17 +130,22 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
      *                    HtmlLocalImageGetter and HtmlRemoteImageGetter
      */
     public void setHtml(@NonNull String html, @Nullable Html.ImageGetter imageGetter) {
-        // this uses Android's Html class for basic parsing, and HtmlTagHandler
-        final HtmlTagHandler htmlTagHandler = new HtmlTagHandler();
-        htmlTagHandler.setClickableTableSpan(clickableTableSpan);
-        htmlTagHandler.setDrawTableLinkSpan(drawTableLinkSpan);
-        if (removeFromHtmlSpace) {
-            setText(removeHtmlBottomPadding(Html.fromHtml(html, imageGetter, htmlTagHandler)));
+        if(null == html || html.trim().isEmpty()){
+            this.setVisibility(GONE);
         } else {
-            setText(Html.fromHtml(html, imageGetter, htmlTagHandler));
+            this.setVisibility(VISIBLE);
+            // this uses Android's Html class for basic parsing, and HtmlTagHandler
+            final HtmlTagHandler htmlTagHandler = new HtmlTagHandler();
+            htmlTagHandler.setClickableTableSpan(clickableTableSpan);
+            htmlTagHandler.setDrawTableLinkSpan(drawTableLinkSpan);
+            if (removeFromHtmlSpace) {
+                setText(removeHtmlBottomPadding(Html.fromHtml(html, imageGetter, htmlTagHandler)));
+            } else {
+                setText(Html.fromHtml(html, imageGetter, htmlTagHandler));
+            }
+            // make links work
+            setMovementMethod(LocalLinkMovementMethod.getInstance());
         }
-        // make links work
-        setMovementMethod(LocalLinkMovementMethod.getInstance());
     }
 
     /**
