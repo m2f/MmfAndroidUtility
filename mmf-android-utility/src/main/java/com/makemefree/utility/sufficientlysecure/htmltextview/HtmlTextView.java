@@ -26,7 +26,6 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.text.Html;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import com.makemefree.utility.R;
