@@ -43,7 +43,7 @@ public class ExpandableBulletView extends LinearLayout implements View.OnClickLi
         int animationDuration = typedArray.getInt(R.styleable.ExpandableBulletView_animationDuration, ExpandableBulletTextView.DEFAULT_ANIMATION_DURATION);
         int textSize = typedArray.getDimensionPixelSize(R.styleable.ExpandableBulletView_textSize, 0);
         String textColor = typedArray.getString(R.styleable.ExpandableBulletView_textColor);
-        Float lineSpacing = typedArray.getFloat(R.styleable.ExpandableBulletView_lineSpacing, 0.0f);
+        float lineSpacing = typedArray.getFloat(R.styleable.ExpandableBulletView_mmfLineSpacing, 0.0f);
 
         typedArray.recycle();
 

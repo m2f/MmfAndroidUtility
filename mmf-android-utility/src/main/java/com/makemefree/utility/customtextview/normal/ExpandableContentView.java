@@ -38,7 +38,9 @@ public class ExpandableContentView extends LinearLayout implements View.OnClickL
         setOrientation(LinearLayout.VERTICAL);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.expandable_content_view, this, true);
+        if(null != inflater) {
+            inflater.inflate(R.layout.expandable_content_view, this, true);
+        }
 
         expandableTextView = (ExpandableTextView) getChildAt(0);
         expandableTextView.setAnimationDuration(animationDuration);

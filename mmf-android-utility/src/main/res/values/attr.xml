@@ -12,7 +12,7 @@
     <attr name="textColor" format="string" />
     <attr name="starGapWidth" format="dimension" />
     <attr name="starRadius" format="dimension" />
-    <attr name="lineSpacing" format="float" />
+    <attr name="mmfLineSpacing" format="float" />
 
     <declare-styleable name="ExpandableContentView">
         <attr name="textContent" format="string" localization="suggested" />
@@ -33,7 +33,7 @@
         <attr name="animationDuration" />
         <attr name="textSize" />
         <attr name="textColor" />
-        <attr name="lineSpacing" />
+        <attr name="mmfLineSpacing" />
     </declare-styleable>
 
     <declare-styleable name="HtmlTextView">
@@ -41,7 +41,7 @@
         <attr name="enableImageGetter" />
         <attr name="textSize" />
         <attr name="textColor" />
-        <attr name="lineSpacing" />
+        <attr name="mmfLineSpacing" />
     </declare-styleable>
 
     <declare-styleable name="ExpandableBulletView">
@@ -53,7 +53,7 @@
         <attr name="animationDuration" />
         <attr name="textSize" />
         <attr name="textColor" />
-        <attr name="lineSpacing" />
+        <attr name="mmfLineSpacing" />
     </declare-styleable>
 
     <declare-styleable name="BulletTextView">
@@ -62,7 +62,7 @@
         <attr name="textColor" />
         <attr name="starGapWidth" />
         <attr name="starRadius" />
-        <attr name="lineSpacing" />
+        <attr name="mmfLineSpacing" />
     </declare-styleable>
 
 </resources>

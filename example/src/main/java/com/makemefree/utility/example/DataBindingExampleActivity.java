@@ -16,10 +16,10 @@
 package com.makemefree.utility.example;
 
 import android.app.Activity;
-import android.databinding.BindingAdapter;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.makemefree.utility.example.databinding.ActivityDataBindingExampleBinding;
 import com.makemefree.utility.example.model.NewsItem;

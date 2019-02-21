@@ -1,9 +1,8 @@
 apply plugin: 'com.android.library'
 
-project.ext.minSdk = 16
-project.ext.compileSdk = 26
-project.ext.buildTools = "26.0.2"
-project.ext.supportLibVersion = "26.0.2"
+project.ext.minSdk = 19
+project.ext.compileSdk = 28
+project.ext.buildTools = "28.0.3"
 
 android {
     compileSdkVersion compileSdk
@@ -12,7 +11,7 @@ android {
     defaultConfig {
         minSdkVersion minSdk
         targetSdkVersion compileSdk
-        versionCode 8
+        versionCode 9
         versionName '1.0'
     }
 
@@ -33,6 +32,6 @@ android {
 }
 
 dependencies {
-    api "com.android.support:support-annotations:${supportLibVersion}"
-    api "com.android.support:appcompat-v7:${supportLibVersion}"
+    api "androidx.annotation:annotation:1.0.1"
+    api "androidx.appcompat:appcompat:1.0.2"
 }

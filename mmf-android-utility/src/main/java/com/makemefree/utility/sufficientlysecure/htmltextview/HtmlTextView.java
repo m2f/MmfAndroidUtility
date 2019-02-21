@@ -17,9 +17,9 @@
 package com.makemefree.utility.sufficientlysecure.htmltextview;
 
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.RawRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RawRes;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -67,7 +67,7 @@ public class HtmlTextView extends JellyBeanSpanFixTextView {
         enableHtmlGetter = typedArray.getBoolean(R.styleable.HtmlTextView_enableImageGetter, false);
         int textSize = typedArray.getDimensionPixelSize(R.styleable.HtmlTextView_textSize, 0);
         String textColor = typedArray.getString(R.styleable.HtmlTextView_textColor);
-        Float lineSpacing = typedArray.getFloat(R.styleable.HtmlTextView_lineSpacing, 0.0f);
+        Float lineSpacing = typedArray.getFloat(R.styleable.HtmlTextView_mmfLineSpacing, 0.0f);
         typedArray.recycle();
 
         if(textSize > 0) this.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);

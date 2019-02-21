@@ -1,7 +1,7 @@
 package com.makemefree.utility.example;
 
 import android.app.Activity;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import com.makemefree.utility.example.databinding.ActivityExpandableViewBinding;
