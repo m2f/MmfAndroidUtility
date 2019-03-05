@@ -1,11 +1,12 @@
 package com.makemefree.utility.example;
 
 import android.app.Activity;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import com.makemefree.utility.example.databinding.ActivityExpandableViewBinding;
 import com.makemefree.utility.example.model.NewsItem;
+
+import androidx.databinding.DataBindingUtil;
 
 public class ExpandableViewActivity extends Activity {
 

@@ -28,7 +28,10 @@ import com.makemefree.utility.sufficientlysecure.htmltextview.DrawTableLinkSpan;
 import com.makemefree.utility.sufficientlysecure.htmltextview.HtmlResImageGetter;
 import com.makemefree.utility.sufficientlysecure.htmltextview.HtmlTextView;
 
-public class MainActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+public class MainActivity extends AppCompatActivity {
 
     // The html table(s) are individually passed through to the ClickableTableSpan implementation
     // presumably for a WebView activity.
@@ -51,7 +54,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HtmlTextView textView = (HtmlTextView) findViewById(R.id.html_text);
+        HtmlTextView textView = findViewById(R.id.html_text);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         //text.setRemoveFromHtmlSpace(false); // default is true
         textView.setClickableTableSpan(new ClickableTableSpanImpl());
