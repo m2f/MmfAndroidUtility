@@ -1,21 +1,24 @@
 package com.makemefree.utility.example;
 
-import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.StrikethroughSpan;
+import android.text.style.StyleSpan;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.makemefree.utility.example.databinding.ActivityExpandableViewBinding;
 import com.makemefree.utility.example.model.NewsItem;
 
-import androidx.databinding.DataBindingUtil;
-
-public class ExpandableViewActivity extends Activity {
-
-    private ActivityExpandableViewBinding binding;
+public class ExpandableViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_expandable_view);
+        ActivityExpandableViewBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_expandable_view);
         String content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut eros sed arcu auctor tincidunt" +
                 "    id sit amet elit. Mauris in faucibus neque. Suspendisse facilisis urna nec nisi convallis tincidunt." +
                 "    Mauris at elit et arcu viverra auctor. Nullam et arcu ultricies, iaculis dolor efficitur, tristique eros." +
@@ -44,11 +47,39 @@ public class ExpandableViewActivity extends Activity {
                 "Lists of Transformers characters",
         };
 
+        StyleSpan styleSpanBold  = new StyleSpan(Typeface.BOLD);
+        StyleSpan styleSpanBold1  = new StyleSpan(Typeface.BOLD);
+        StyleSpan styleSpanBold2  = new StyleSpan(Typeface.BOLD);
+
+
+        SpannableString span1 = new SpannableString("Span 1 SpannableString Example.");
+        span1.setSpan(styleSpanBold, 0,5, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+
+        SpannableString span2 = new SpannableString("Span 2 SpannableString Example.");
+        span2.setSpan(styleSpanBold1, 0,5, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+
+        StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
+
+        SpannableString span3 = new SpannableString("Span 3 SpannableString Example2.");
+        span3.setSpan(strikethroughSpan, 8, 10, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+
+        SpannableString span4 = new SpannableString("This is span 4 SpannableString Example2.");
+        span4.setSpan(styleSpanBold2, 8, 10, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+
+
+        SpannableString[] strings = new SpannableString[]{
+                span3,
+                span2,
+                span1,
+                span4,
+        };
+
+
         // create dummy item
         NewsItem item = new NewsItem();
         item.setHtml(content);
         item.setText(this.getString(R.string.simple_text_content));
-        item.setArrayContent(pointers);
+        item.setArrayContent(strings);
 
         // in XML we declared a variable newsItem, data binding generated the set method
         // once set, all fields/values/views are updated accordingly

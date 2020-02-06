@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -76,5 +77,23 @@ public class BulletTextView extends TextView {
         }
         span.setSpan(new StarSpan(starGapWidth, starRadius), spanStart, pointersStr.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         this.setText(span);
+    }
+
+    public void setArrayContent(SpannableString[] strings){
+
+        SpannableStringBuilder pointersStr = new SpannableStringBuilder();
+
+        for (int i = 0; i < strings.length; i++) {
+            pointersStr.append(strings[i]);
+            pointersStr.append("\n");
+        }
+        int spanStart = 0, len = strings.length;
+        for(int i = 0; i <  len - 1; i++) {
+            int spanEnd = spanStart + strings[i].length() + 1;
+            pointersStr.setSpan(new StarSpan(starGapWidth, starRadius), spanStart, spanEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spanStart = spanEnd;
+        }
+        pointersStr.setSpan(new StarSpan(starGapWidth, starRadius), spanStart, pointersStr.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        this.setText(pointersStr);
     }
 }

@@ -15,9 +15,10 @@
  */
 package com.makemefree.utility.example;
 
-import android.app.Activity;
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 
@@ -28,7 +29,7 @@ import com.makemefree.utility.sufficientlysecure.htmltextview.HtmlResImageGetter
 import com.makemefree.utility.sufficientlysecure.htmltextview.HtmlTextView;
 
 
-public class DataBindingExampleActivity extends Activity {
+public class DataBindingExampleActivity extends AppCompatActivity {
 
     // layout_name + binding, generated class
     private ActivityDataBindingExampleBinding binding;

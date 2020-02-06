@@ -1,5 +1,7 @@
 package com.makemefree.utility.example.model;
 
+import android.text.SpannableString;
+
 /**
  * A plain old Java object that holds a HTML string.
  */
@@ -7,7 +9,7 @@ public class NewsItem {
 
     private String text;
     private String html;
-    private String[] arrayContent;
+    private SpannableString[] arrayContent;
 
     public String getText() {
         return text;
@@ -25,11 +27,11 @@ public class NewsItem {
         this.html = html;
     }
 
-    public String[] getArrayContent() {
+    public SpannableString[] getArrayContent() {
         return arrayContent;
     }
 
-    public void setArrayContent(String[] arrayContent) {
+    public void setArrayContent(SpannableString[] arrayContent) {
         this.arrayContent = arrayContent;
     }
 }
